@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # Physics 91SI
 # Spring 2015
@@ -28,8 +29,8 @@ Usage
         print(help_message)
     elif args[0] == "approx" and len(args) == 2:
         phi_approx(int(args[1]))
-    elif args[0] == "converge" and len(args) == 1:
-        phi_converge()
+    elif args[0] == "converge" and len(args) == 2:
+        args[1].write(phi_converge) 
     else:
         print("Error: input not understood.\n" \
                 "    Type './fib.py help' for info on this program.")
@@ -54,7 +55,7 @@ phi_approx_output_format = \
 
 def phi_approx(n, show_output=True):
     """Return the nth-order Fibonacci approximation to the golden ratio."""
-    fib_n = fibbb(n)
+    fib_n = fib(n)
     fib_nm1 = fib(n - 1)
     phi = float(fib_n)/fib_nm1
     if show_output:
